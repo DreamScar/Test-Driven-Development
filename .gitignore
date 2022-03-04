@@ -1,4 +1,7 @@
 "db.sqlite3"
 "geckodriver.log"
-"*__pycache__*"
+"superlists/__pycache__/*"
+"lists/__pycache__/*"
+"lists/migrations/__pycache__/*"
+"functional_test/__pycache__/*"
 "*.pyc"
