@@ -120,5 +120,12 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox = self.browser.find_element_by_id('id_new_item')
         self.assertAlmostEqual(inputbox.location['x'] + inputbox.size['width']/2, 512, delta=10)
         
+        #她新建了一个清单，看到输入框仍完美地居中显示
+        inputbox.send_keys('testing')
+        inputbox.send_keys(Keys.ENTER)
+        self.wait_for_row_in_list_table('1: testing')
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        self.assertAlmostEqual(inputbox.location['x'] + inputbox.size['width']/2, 512, delta=10)
+        
 #if __name__ == '__main__':
 #    unittest.main(warnings = 'ignore')
